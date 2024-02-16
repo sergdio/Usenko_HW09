@@ -34,7 +34,7 @@ public class email_test {
 
         String textSucces = driver.findElement(By.xpath("//*[@id=\"authentication\"]")).getText();
         Assert.assertTrue(textSucces.contains("CREATE AN ACCOUNT"));
-
+        //driver.quit();
     }
 
     @Test
@@ -49,7 +49,9 @@ public class email_test {
         String Unsuccess = driver.findElement(By.xpath("//*[@id=\"create_account_error\"]")).getText();
         Assert.assertTrue(Unsuccess.contains("Invalid email address."));
 
-//*[@id="create_account_error"]/ol/li
+
+        //driver.quit();
+
     }
 }
 
