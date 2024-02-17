@@ -8,7 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class email_test {
+public class email_test extends BaseTests {
 //    @BeforeMethod
 //    public void setUp() {
 //        driver = new ChromeDriver();
@@ -25,9 +25,9 @@ public class email_test {
 
     @Test
     public void EmailValid() {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("http://prestashop.qatestlab.com.ua/en/authentication?back=my-account#account-creation");
+      //  WebDriver driver = new ChromeDriver();
+      //  driver.manage().window().maximize();
+      //  driver.get("http://prestashop.qatestlab.com.ua/en/authentication?back=my-account#account-creation");
 
         driver.findElement(By.xpath("//*[@id=\"email_create\"]")).sendKeys("sergdio@ukr.net");
         driver.findElement(By.xpath("//*[@id=\"SubmitCreate\"]/span")).click();
@@ -39,10 +39,11 @@ public class email_test {
 
     @Test
     public void EmailInvalid() {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("http://prestashop.qatestlab.com.ua/en/authentication?back=my-account#account-creation");
+        //WebDriver driver = new ChromeDriver();
+        //driver.manage().window().maximize();
+        //driver.get("http://prestashop.qatestlab.com.ua/en/authentication?back=my-account#account-creation");
         driver.findElement(By.xpath("//*[@id=\"email_create\"]")).sendKeys("sergdioukr.net");
+
         driver.findElement(By.xpath("//*[@id=\"SubmitCreate\"]/span")).click();
 
 
