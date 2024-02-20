@@ -19,7 +19,7 @@ public class BaseTests {
     @AfterMethod
     public void afterMethod() {
         if (driver != null) {
-     //       driver.quit();
+            driver.quit();
         }
     }
 

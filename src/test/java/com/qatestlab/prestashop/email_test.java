@@ -35,7 +35,7 @@ public class email_test extends BaseTests {
 
         String textSucces = driver.findElement(By.xpath("//*[@id=\"authentication\"]")).getText();
         Assert.assertTrue(textSucces.contains("CREATE AN ACCOUNT"));
-        driver.quit();
+        //driver.quit();
     }
 
     @Test
