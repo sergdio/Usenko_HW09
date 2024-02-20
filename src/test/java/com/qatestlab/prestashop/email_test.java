@@ -1,5 +1,6 @@
 package com.qatestlab.prestashop;
 
+import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -34,7 +35,7 @@ public class email_test extends BaseTests {
 
         String textSucces = driver.findElement(By.xpath("//*[@id=\"authentication\"]")).getText();
         Assert.assertTrue(textSucces.contains("CREATE AN ACCOUNT"));
-        //driver.quit();
+        driver.quit();
     }
 
     @Test
@@ -45,8 +46,11 @@ public class email_test extends BaseTests {
         driver.findElement(By.xpath("//*[@id=\"email_create\"]")).sendKeys("sergdioukr.net");
 
         driver.findElement(By.xpath("//*[@id=\"SubmitCreate\"]/span")).click();
-
-
+try {
+    Thread.sleep(1000);
+} catch (InterruptedException e) {
+  throw   new RuntimeException(e);
+}
         String Unsuccess = driver.findElement(By.xpath("//*[@id=\"create_account_error\"]")).getText();
         Assert.assertTrue(Unsuccess.contains("Invalid email address."));
 
